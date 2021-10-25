@@ -1,11 +1,11 @@
 const { connect } = require("http2");
-const mysql = require("mysql");
+const mysql2 = require("mysql2");
 const inquirer =("inquirer");
 require("console.table");
 require("dotenv").config();
 
 //Connecting to database
-var connection = mysql.createConnection(
+var connection = mysql2.createConnection(
     {
         host: "localhost",
         port: 3306,
