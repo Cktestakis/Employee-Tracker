@@ -150,6 +150,90 @@ function addEmployee() {
         .then(function(val) {
             var roleId = selectRole().indexOf(val.choice) + 1;
 
-            
-        })
+            //TODO: manager not populating on list for new employee
+            var managerId = selectManager().indexOf(val.choice) + 1;
+
+            query = "INSERT INTO employee SET ?";
+
+            connection.query(
+                query,
+                {
+                    first_name: val.firstName,
+                    last_name: val.lastName;
+                    manager_id: managerId;
+                    role_id: roleId,
+                },
+                function (err) {
+                    if (err) throw err;
+                    console.table(val);
+                    console.log("Employee has been added!\n");
+                    firstPrompt();
+                }
+            );
+        });
+}
+
+//Update Employee Role Function
+function updateEmployeeRole() {
+    employeeArray();
+}
+
+//Displaying employee array
+function employeeArray() {
+    var query = 
+    "SELECT e.id, e.first_name, e.last_name, r.title, d.name AS department, r.salary, CONCAT(m.first_name, ' ', m.last_name) AS manager FROM employee e JOIN role r ON e.role_id = r.id JOIN department d ON d.id = r.department_id JOIN employee m ON m.id = e.manager_id";
+
+    connection.query(query, function(err, res) {
+        if (err) throw err;
+
+        const employeeChoices = res.map(({ id, first_name, last_name }) => ({
+            value: id,
+            name: `${first_name} ${last_name}`,
+        }));
+
+        console.table(res);
+        console.log("employeeArray to update!\n");
+
+        roleArray(employeeChoices);
+    });
+}
+
+//Displaying role array
+function roleArray(employeeChoices) {
+    var query = "SELECT r.id, r.title, r.salary FROM role r";
+    let roleChoices;
+
+    connection.query(query, function (err, res) {
+        if(err) throw err;
+
+        roleCHoices = res.map (({ id, title, salary }) => ({
+            value: id,
+            title: `${title}`,
+            salary: `${salary}`,
+        }));
+
+        console.table(res);
+        console.log("roleArray to update!\n");
+
+        promptEmployeeRole(employeeChoices, roleChoices);
+    });
+}
+
+//Prompts for which employee to update and what the new role is
+function promptEmployeeRole(employeeChoices, roleChoices) {
+    inquirer    
+        .prompt([
+            {
+                type: "list",
+                name: "employeeId",
+                message: "Which employee do you want to update the role for?",
+                choices: employeeChoices
+            },
+            {
+                type: "list",
+                name: "roleId",
+                message: "what is the employee's new role?",
+                choices: roleChoices,
+            },
+        ])
 }
