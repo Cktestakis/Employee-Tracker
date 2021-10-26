@@ -159,8 +159,8 @@ function addEmployee() {
                 query,
                 {
                     first_name: val.firstName,
-                    last_name: val.lastName;
-                    manager_id: managerId;
+                    last_name: val.lastName,
+                    manager_id: managerId,
                     role_id: roleId,
                 },
                 function (err) {
