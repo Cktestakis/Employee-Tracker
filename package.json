@@ -1,0 +1,27 @@
+{
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "description": "Employee Project Tracker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cktestakis/Employee-Tracker.git"
+  },
+  "author": "Cody Ktestakis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cktestakis/Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/Cktestakis/Employee-Tracker#readme",
+  "dependencies": {
+    "asciiart-logo": "^0.2.6",
+    "colors": "^1.4.0",
+    "console.table": "^0.10.0",
+    "inquirer": "^8.2.0",
+    "mysql2": "^2.3.2"
+  }
+}
