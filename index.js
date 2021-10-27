@@ -12,13 +12,13 @@ connection.connect((err) => {
     console.log(
         asciLogo({
             name: "Employee Management System",
-            font: "Speed",
+            font: "Slant",
             lineChars: 3,
             padding: 2,
             margin: 3,
-            borderColor: "purple",
-            logoColor: "bold-red",
-            textColor: "red",
+            borderColor: "white",
+            logoColor: "yellow",
+            textColor: "white",
         })
         .emptyLine()
         .right("version 1.0")
