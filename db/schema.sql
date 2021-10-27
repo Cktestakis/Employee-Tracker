@@ -3,7 +3,7 @@ CREATE database employeeTrackerDB;
 USE employeeTrackerDB;
 CREATE TABLE department (
     id INT NOT NULL AUTO_INCREMENT,
-    title VARCHAR(30) NULL,
+    name VARCHAR(30) NULL,
     PRIMARY KEY (id)
 );
 CREATE TABLE role (
