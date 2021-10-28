@@ -232,7 +232,7 @@ const updateEmployeeRole = () => {
 const updateEmployeeManager = () => {
   let sql = `SELECT employee.id, employee.first_name, employee.last_name, employee.manager_id FROM employee`;
   connection.query(sql, (error, response) => {
-    if (error) throw error; // Added for now..Check once
+    if (error) throw error; 
     let employeeNamesArray = [];
     response.forEach((employee) => {
       employeeNamesArray.push(`${employee.first_name}${employee.last_name}`);
