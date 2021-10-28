@@ -58,6 +58,8 @@ App for bunsiness to be able to view and manage the deparmtents, roles, and empl
 
 [Demo Video](https://watch.screencastify.com/v/BtF4mtkNreIaSTovQdfG)
 
+## License
+
 [![License: MIT](https://img.shields.io/github/license/Cktestakis/Employee-Tracker)](https://opensource.org/licenses/MIT)
 
 ## Questions
