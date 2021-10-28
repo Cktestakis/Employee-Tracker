@@ -12,7 +12,7 @@ connection.connect((err) => {
     console.log(
         asciLogo({
             name: "Employee Management System",
-            font: "Slant",
+            font: "Rectangles",
             lineChars: 3,
             padding: 2,
             margin: 3,
